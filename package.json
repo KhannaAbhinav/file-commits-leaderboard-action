@@ -8,6 +8,8 @@
     "@actions/github": "^2.1.1",
     "@actions/glob": "^0.1.0",
     "@types/underscore": "^1.9.4",
+    "aws-sdk": "^2.645.0",
+    "node-uuid": "^1.4.8",
     "simple-git": "^1.132.0",
     "underscore": "^1.9.2"
   },
@@ -39,13 +41,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/akhanna38/file-commit-leaderboard-action.git"
+    "url": "git+https://github.com/KhannaAbhinav/file-commits-leaderboard-action.git"
   },
   "keywords": [],
   "author": "Abhinav Khanna",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/akhanna38/file-commit-leaderboard-action/issues"
+    "url": "https://github.com/KhannaAbhinav/file-commits-leaderboard-action/issues"
   },
-  "homepage": "https://github.com/akhanna38/file-commit-leaderboard-action#readme"
+  "homepage": "https://github.com/KhannaAbhinav/file-commits-leaderboard-action#readme"
 }
