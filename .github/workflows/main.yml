@@ -1,0 +1,66 @@
+name: A workflow for Creating File Leaderboard
+on: push
+jobs:
+  build:
+    name: File Leaderboard Action
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Files
+        uses: actions/checkout@v1
+      - name: Create File Commits Leaderboard
+        id: CreateFileCommitsLeaderboard1
+        uses: "./"
+      - name: "Print Leaderboard Output"
+        run: 'echo "Leaderboard Output :  ${{ steps.CreateFileCommitsLeaderboard1.outputs.leaderBoardOutput }}"'
+      - name: Create File Commits Leaderboard
+        id: CreateFileCommitsLeaderboard2
+        uses: "./"
+        with:
+          Path: "."
+          Filter: '.*\.ts'
+          Recurse: True
+          Top: "2"
+          Bottom: "0"
+          OutputToConsole: "False"
+      - name: "Print Leaderboard Output"
+        run: 'echo "Leaderboard Output :  ${{ steps.CreateFileCommitsLeaderboard2.outputs.leaderBoardOutput }}"'
+      - name: Create File Commits Leaderboard
+        id: CreateFileCommitsLeaderboard3
+        uses: "./"
+        with:
+          Path: "."
+          Filter: '.*\.json'
+          Recurse: "False"
+          Top: "1"
+          Bottom: "0"
+          OutputToConsole: "True"
+      - name: "Print Leaderboard Output"
+        run: 'echo "Leaderboard Output :  ${{ steps.CreateFileCommitsLeaderboard3.outputs.leaderBoardOutput }}"'
+      - name: Create File Commits Leaderboard
+        id: CreateFileCommitsLeaderboard4
+        uses: "./"
+        with:
+          Path: "."
+          Bottom: "3"
+          OutputToConsole: "True"
+      - name: "Print Leaderboard Output"
+        run: 'echo "Leaderboard Output :  ${{ steps.CreateFileCommitsLeaderboard4.outputs.leaderBoardOutput }}"'
+      - name: Create File Commits Leaderboard
+        id: CreateFileCommitsLeaderboard5
+        uses: "./"
+        with:
+          Top: "2"
+          Bottom: "10"
+          OutputToConsole: "True"
+      - name: "Print Leaderboard Output"
+        run: 'echo "Leaderboard Output :  ${{ steps.CreateFileCommitsLeaderboard5.outputs.leaderBoardOutput }}"'
+      - name: Create File Commits Leaderboard
+        id: CreateFileCommitsLeaderboard6
+        uses: "./"
+        with:
+          Filter: '.*\.json'
+          Top: "2"
+          Bottom: "10"
+          OutputToConsole: "False"
+      - name: "Print Leaderboard Output"
+        run: 'echo "Leaderboard Output :  ${{ steps.CreateFileCommitsLeaderboard6.outputs.leaderBoardOutput }}"'
